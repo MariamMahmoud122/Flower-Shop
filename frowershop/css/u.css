@@ -1,0 +1,106 @@
+/*////////////--------puplic style-----------/////*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+}
+
+nav{
+width: 100%;
+padding: 20px;
+background: rgb(204, 198, 204);
+}
+nav.logo{
+width: 10%;
+}
+nav.logo img{
+width: 20%;
+}
+nav .navlist{
+width: 80%;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+list-style: none;
+margin-top: 3px;
+}
+nav img{
+    vertical-align: middle;
+    width: 40px;
+    border-radius: 40px;
+
+}
+nav.navlist a{
+    color: white;
+    font-weight: 500;
+}
+.jumbotron{
+    background-color: #cccccce6;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.jumbotron p{
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #53354e;
+    border-color: #2e6da4;
+}
+.btn-primary:hover {
+    color: #b95d5d;
+    background-color: #f5f5f5;
+    border-color: #a94442;
+}
+section.a{
+background-color: #53354e;
+}
+.navbar{
+    margin-bottom: 0px;
+}
+.k{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    margin-top: 5px;
+    margin-bottom:5px ;
+}
+section.b{
+    background-color: #e4c2d6;
+}
+.c{
+    background-color: rgb(116, 118, 129);
+    color: white;
+}
+.cc{
+    display: flex;
+    justify-content: space-between;
+   
+}
+div.cc img{
+    border-radius: 20%;
+    width: 350px;
+}
+.thumbnal{
+    width: 50px;
+    display: flex;
+
+ margin-left: auto;
+ padding: 20px;
+}
+.thumbnal img{
+    width: 40px;
+    border-radius: 50%;
+    padding: 5px;
+}
+.thumbnail img{
+    width: 200px;
+}
