@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flower Shop</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/u.css">
+<style>
+body { font-family: 'Montserrat', sans-serif; background-color: #000; padding-top: 70px; scroll-behavior: smooth; }
+
+/* Navbar */
+.navbar { background-color: #53354e; border: none; }
+.navbar a { color: #fff !important; font-weight: 500; transition: 0.3s; }
+.navbar a:hover { color: #e4c2d6 !important; }
+.navbar-toggle { border: none; }
+
+/* Jumbotron */
+.jumbotron { background-color: #cccccce6; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 30px; }
+.jumbotron img { width: 400px; max-width: 100%; border-radius: 30%; }
+
+/* Products Section */
+section.a { background: #53354e; padding: 20px 0; color: #fff; }
+.thumbnail { background: #fff; border-radius: 15px; overflow: hidden; display:flex; flex-direction: column; justify-content: space-between; height: 380px; transition:0.3s; box-shadow:0 4px 10px rgba(0,0,0,0.2);}
+.thumbnail img { width: 100%; height: 220px; object-fit: cover; transition:0.4s; }
+.thumbnail:hover img { transform: scale(1.1); }
+.thumbnail:hover { transform: translateY(-8px); box-shadow:0 10px 20px rgba(0,0,0,0.3);}
+.caption { text-align:center; padding:10px; }
+.caption h3 { font-size:18px; color:#333; margin-bottom:8px; }
+.caption p { color:#777; margin-bottom:10px; }
+.btn-primary { background-color:#53354e; border:none; border-radius:20px; transition:0.3s; color:#fff; }
+.btn-primary:hover { background-color:#a94442; }
+
+/* About Section */
+.cc { display:flex; justify-content:space-between; gap:30px; align-items:center; color:#fff; padding:20px;}
+.cc img { width:350px; max-width:100%; border-radius:20px; }
+
+/* Cart */
+#cart { max-width: 800px; margin:50px auto; background:#f9f9f9; padding:30px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+#cart h2 { text-align:center; margin-bottom:30px; font-size:2.5em; color:#53354e; }
+#cart-items { list-style:none; padding:0; margin:0 0 20px 0;}
+.cart-item { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #ddd; padding:15px 10px; border-radius:10px; transition:0.3s;}
+.cart-item:hover { background:#f1e4f2; }
+.cart-item img { width:60px; height:60px; object-fit:cover; border-radius:10px; margin-right:15px; }
+.remove-item { background:#d9534f; border:none; color:white; border-radius:5px; padding:5px 10px; cursor:pointer; transition:0.3s; }
+.remove-item:hover { background:#c9302c; }
+#cart-total { display:block; text-align:right; font-size:1.5em; font-weight:bold; color:#53354e; }
+
+/* Contact Section */
+section.b { background:#e4c2d6; padding:30px; }
+section.c { background:#747681; padding:30px; color:#fff; }
+
+/* Responsive */
+@media(max-width:768px){
+    .jumbotron { flex-direction:column; text-align:center; }
+    .jumbotron img { width:100%; margin-top:20px; }
+    .cc { flex-direction:column; text-align:center; }
+    .cc img { width:100%; }
+    .thumbnail { height:auto; }
+    .thumbnail img { height:180px; }
+}
+@media(max-width:992px){
+    .cc { flex-direction:column; align-items:center; }
+    .cc img { width:80%; }
+    .thumbnail img { height:200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/d.jpg" style="width:40px; border-radius:50%;"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="nav navbar-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#Product">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#cart"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count">0</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Jumbotron -->
+<div class="jumbotron" id="home">
+  <div>
+    <h1>Welcome</h1>
+    <h2>in Flower Shop</h2>
+    <p>Flowers are the most beautiful thing as a gift and for your daily lifestyle.</p>
+    <p><a class="btn btn-primary btn-lg" href="#Product">Shop now</a></p>
+  </div>
+  <div><img src="img/photo_12.jpg" alt="Flower"></div>
+</div>
+
+<!-- Products Section -->
+<section class="a" id="Product">
+  <div class="text-center" style="font-size:3em; margin-bottom:20px;">Products</div>
+  <div class="row">
+    <!-- Product 1 -->
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="img/photo_5_x.jpg" alt="Red Charm">
+        <div class="caption">
+          <h3>Red Charm</h3>
+          <p>1,600.00 EGP</p>
+          <p><a href="#" class="btn btn-primary add-to-cart" data-name="Red Charm" data-price="1600">Add to Cart</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- Product 2 -->
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="img/photo_4.jpg" alt="Pretty in Pink">
+        <div class="caption">
+          <h3>Pretty in Pink</h3>
+          <p>1,710.00 EGP</p>
+          <p><a href="#" class="btn btn-primary add-to-cart" data-name="Pretty in Pink" data-price="1710">Add to Cart</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- Product 3 -->
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="img/photo_6.jpg" alt="Spring Promise">
+        <div class="caption">
+          <h3>Spring Promise</h3>
+          <p>2,650.00 EGP</p>
+          <p><a href="#" class="btn btn-primary add-to-cart" data-name="Spring Promise" data-price="2650">Add to Cart</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Row 2 -->
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="img/photo_3.jpg" alt="Pink Sweatheart">
+        <div class="caption">
+          <h3>Pink Sweatheart</h3>
+          <p>1,320.00 EGP</p>
+          <p><a href="#" class="btn btn-primary add-to-cart" data-name="Pink Sweatheart" data-price="1320">Add to Cart</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="img/photo_7.jpg" alt="Lilly Bloom">
+        <div class="caption">
+          <h3>Lilly Bloom</h3>
+          <p>2,130.00 EGP</p>
+          <p><a href="#" class="btn btn-primary add-to-cart" data-name="Lilly Bloom" data-price="2130">Add to Cart</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="img/photo_8.jpg" alt="Morning Freshness">
+        <div class="caption">
+          <h3>Morning Freshness</h3>
+          <p>1,480.00 EGP</p>
+          <p><a href="#" class="btn btn-primary add-to-cart" data-name="Morning Freshness" data-price="1480">Add to Cart</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Row 3 -->
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="img/photo_20.jpg" alt="Lilly Bloom">
+        <div class="caption">
+          <h3>Lilly Bloom</h3>
+          <p>2,130.00 EGP</p>
+          <p><a href="#" class="btn btn-primary add-to-cart" data-name="Lilly Bloom" data-price="2130">Add to Cart</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="img/photo_10.jpg" alt="Beautiful Sunshine">
+        <div class="caption">
+          <h3>Beautiful Sunshine</h3>
+          <p>1,075.00 EGP</p>
+          <p><a href="#" class="btn btn-primary add-to-cart" data-name="Beautiful Sunshine" data-price="1075">Add to Cart</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="img/photo_11.jpg" alt="Wild Beauty">
+        <div class="caption">
+          <h3>Wild Beauty</h3>
+          <p>1,790.00 EGP</p>
+          <p><a href="#" class="btn btn-primary add-to-cart" data-name="Wild Beauty" data-price="1790">Add to Cart</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="c" id="about">
+  <div class="text-center m-5"><h3>About us</h3></div>
+  <div class="cc">
+    <div>
+      <h3>Who We Are</h3>
+      <p>Flower Power is a premium floral design brand in Egypt, creating elegant arrangements for daily life, weddings, and special events.</p>
+      <p>We believe flowers bring joy, beauty, and unforgettable moments.</p>
+      <a href="#" class="btn btn-primary">Read More</a>
+    </div>
+    <img src="img/photo_1.jpg" alt="About Image">
+  </div>
+</section>
+
+<!-- Cart Section -->
+<section id="cart" style="padding:50px; text-align:center;">
+  <h2>Your Cart</h2>
+  <ul id="cart-items" style="list-style:none; padding:0;"></ul>
+  <h4>Total: <span id="cart-total">0</span> EGP</h4>
+</section>
+
+<!-- Contact Section -->
+<section class="b" id="contact">
+  <div class="text-center m-5"><h3>Contact us</h3></div>
+  <form>
+    <div class="form-group">
+      <label>Email address</label>
+      <input type="email" class="form-control" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea class="form-control" cols="30" rows="10"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+  <div class="t"> <div class="row"> <div class="col-sm-6 col-md-4"> <div class="thumbnal"> <a href=""><img src="img/photo_16jpg.jpg" alt="..."></a> <a href="https://www.facebook.com/profile.php?id=100065376243504"> <img src="img/photo_155.jpg" alt="..."></a> <a href=""><img src="img/photo_133.jpg" alt="..."></a> </div> </div>  </div>
+</section>
+
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+(function(){
+  const cartCount = document.querySelector('.cart-count');
+  const cartItems = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  let count = 0, total = 0;
+
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const name = btn.dataset.name;
+      const price = parseFloat(btn.dataset.price);
+      const imgSrc = btn.closest('.thumbnail').querySelector('img').src;
+
+      count++; cartCount.textContent = count;
+
+      const li = document.createElement('li');
+      li.className = 'cart-item';
+      li.innerHTML = `
+        <div style="display:flex; gap:10px; align-items:center;">
+          <img src="${imgSrc}" style="width:50px; border-radius:5px;">
+          <span>${name} - ${price} EGP</span>
+        </div>
+        <button class="btn btn-danger btn-sm remove-item">Remove</button>
+      `;
+      cartItems.appendChild(li);
+
+      total += price; cartTotal.textContent = total;
+
+      li.querySelector('.remove-item').addEventListener('click', () => {
+        cartItems.removeChild(li);
+        count--; total -= price;
+        cartCount.textContent = count;
+        cartTotal.textContent = total;
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

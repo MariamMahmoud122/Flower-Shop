@@ -1,0 +1,342 @@
+/*////////////--------puplic style-----------/////*/
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body{font-family:'Montserrat', sans-serif; background-color:#000;
+     padding-top:70px;
+
+    overflow-x: hidden; /* يمنع أي scroll أفقي */
+
+    }
+
+
+
+/* ================= NAV ================= */
+
+.navbar {
+    background-color: #53354e;
+    border: none;
+}
+
+.navbar a {
+    color: #fff !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #e4c2d6 !important;
+}
+
+.navbar-toggle {
+    border: none;
+}
+nav{
+    width: 100%;
+    padding: 20px;
+    background: rgb(204, 198, 204);
+}
+
+nav img{
+    vertical-align: middle;
+    width: 40px;
+    border-radius: 50%;
+}
+/* ================= CART STYLES ================= */
+#cart {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #f9f9f9; /* خلفية فاتحة */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* ظل لطيف */
+}
+
+#cart h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #53354e;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 10px;
+    transition: background 0.3s;
+    border-radius: 10px;
+}
+
+.cart-item:hover {
+    background: #f1e4f2; /* لون خفيف عند التحويم */
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.cart-item span {
+    flex: 1;
+    font-weight: 500;
+    color: #333;
+}
+
+.remove-item {
+    background: #d9534f;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.remove-item:hover {
+    background: #c9302c;
+}
+
+#cart-total {
+    display: block;
+    text-align: right;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #53354e;
+}
+
+/* ================= JUMBOTRON ================= */
+.jumbotron{
+    background-color: #cccccce6;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.jumbotron p{
+    margin: 10px 0;
+}
+
+.jumbotron img{
+    width: 400px;
+    max-width: 100%;
+    border-radius: 20px;
+}
+.thumbnail img {
+    transition: 0.4s;
+}
+
+.thumbnail:hover img {
+    transform: scale(1.1);
+}
+.thumbnail {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.btn {
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+section.a {
+    background: linear-gradient(to right, #53354e, #903749);
+}
+
+/* ================= BUTTON ================= */
+.btn-primary {
+    color: #fff;
+    background-color: #53354e;
+    border: none;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #a94442;
+    color: #fff;
+}
+
+/* ================= SECTIONS ================= */
+section.a{
+    background-color: #53354e;
+    padding: 20px 0;
+}
+
+.navbar{
+    margin-bottom: 0px;
+}
+
+.k{
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    margin: 15px 0;
+}
+
+section.b{
+    background-color: #e4c2d6;
+    padding: 30px;
+}
+
+.c{
+    background-color: rgb(116, 118, 129);
+    color: white;
+    padding: 30px;
+}
+
+/* ================= ABOUT ================= */
+.cc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.cc img{
+    border-radius: 20px;
+    width: 350px;
+    max-width: 100%;
+}
+
+/* ================= THUMB ================= */
+.thumbnal{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.thumbnal img{
+    width: 45px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.thumbnal img:hover{
+    transform: scale(1.2);
+}
+
+/* ================= PRODUCTS 🔥 ================= */
+.thumbnail{
+    height: 380px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.thumbnail:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.thumbnail img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover; /* أهم حاجة 🔥 */
+}
+
+.caption{
+    text-align: center;
+    padding: 10px;
+}
+
+.caption h3{
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.caption p{
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.caption .btn{
+    border-radius: 20px;
+    margin: 3px;
+}
+
+/* المسافات */
+.col-sm-6,
+.col-md-4{
+    margin-bottom: 25px;
+}
+
+.navbar-nav li a:hover i {
+    color: #e4c2d6; /* تغيير اللون عند المرور */
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+/* ================= RESPONSIVE 🔥 ================= */
+
+/* موبايل */
+@media (max-width: 768px){
+
+    .jumbotron{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cc{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .k{
+        font-size: 2em;
+    }
+
+    .thumbnail{
+        height: auto;
+    }
+
+    .thumbnail img{
+        height: 180px;
+    }
+}
+
+/* تابلت */
+@media (max-width: 992px){
+
+    .cc{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cc img{
+        width: 80%;
+    }
+
+    .thumbnail img{
+        height: 200px;
+    }
+}
